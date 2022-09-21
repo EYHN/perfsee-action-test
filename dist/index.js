@@ -2845,7 +2845,7 @@ try {
   }
   console.log()
   const command = './node_modules/.bin/perfsee'
-  core.debug(`RUN ${command} ${args.join(' ')}`)
+  console.log(`RUN ${command} ${args.join(' ')}`)
   childProcess.spawnSync('./node_modules/.bin/perfsee', args, {
     shell: false,
     stdio: ['inherit', 'inherit', 'inherit'],
