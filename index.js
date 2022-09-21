@@ -2,36 +2,39 @@ const core = require('@actions/core')
 const childProcess = require('child_process')
 
 try {
-  const command = ['take-snapshot']
+  const args = ['take-snapshot']
 
-  command.push('--project', core.getInput('project'))
-  command.push('--token', core.getInput('token'))
+  args.push('--project', core.getInput('project'))
+  args.push('--token', core.getInput('token'))
 
   if (core.getInput('hash')) {
-    command.push('--hash', core.getInput('hash'))
+    args.push('--hash', core.getInput('hash'))
   }
   if (core.getInput('hash')) {
-    command.push('--hash', core.getInput('hash'))
+    args.push('--hash', core.getInput('hash'))
   }
   if (core.getInput('env')) {
     for (const env of parseArrayInput(core.getInput('env'))) {
-      command.push('--env', env)
+      args.push('--env', env)
     }
   }
   if (core.getInput('profile')) {
     for (const profile of parseArrayInput(core.getInput('profile'))) {
-      command.push('--profile', profile)
+      args.push('--profile', profile)
     }
   }
   if (core.getInput('title')) {
-    command.push('--title', core.getInput('title'))
+    args.push('--title', core.getInput('title'))
   }
   if (core.getInput('pages')) {
     for (const page of parseArrayInput(core.getInput('pages'))) {
-      command.push(page)
+      args.push(page)
     }
   }
-  childProcess.spawnSync('./node_modules/.bin/perfsee', command, {
+  console.log()
+  const command = './node_modules/.bin/perfsee'
+  core.debug(`RUN ${command} ${args.join(' ')}`)
+  childProcess.spawnSync('./node_modules/.bin/perfsee', args, {
     shell: false,
     stdio: ['inherit', 'inherit', 'inherit'],
     env: { ...process.env },
