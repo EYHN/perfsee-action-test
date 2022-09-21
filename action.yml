@@ -22,7 +22,6 @@ inputs:
   pages:
     description: 'Filter pages to be included in the snapshot. defaults to include all pages.'
     required: false
-outputs:
 runs:
   using: 'node16'
   main: 'dist/index.js'
