@@ -1,0 +1,14 @@
+{
+  "name": "perfsee-action",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  },
+  "author": "eyhn",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@actions/core": "^1.9.1",
+    "@perfsee/sdk": "^1.0.0-alpha.3"
+  }
+}

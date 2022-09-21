@@ -1,0 +1,28 @@
+name: 'Perfsee Take Snapshot'
+description: 'Take a snapshot of the project.'
+inputs:
+  project:
+    description: 'The project ID on Perfsee platform.'
+    required: true
+  hash:
+    description: 'The commit hash associated with the snapshot, defaults to read from github context.'
+    required: false
+  env:
+    description: 'Filter environments to be included in the snapshot. defaults to include all environments.'
+    required: false
+  profile:
+    description: 'Filter profiles to be included in the snapshot. defaults to include all profiles.'
+    required: false
+  title:
+    description: The title of the snapshot.
+    required: false
+  token:
+    description: Authentication token used for calling Perfsee api.
+    required: true
+  pages:
+    description: 'Filter pages to be included in the snapshot. defaults to include all pages.'
+    required: false
+outputs:
+runs:
+  using: 'node16'
+  main: 'index.js'
