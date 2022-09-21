@@ -2812,6 +2812,7 @@ var __webpack_exports__ = {};
 (() => {
 const core = __nccwpck_require__(186)
 const childProcess = __nccwpck_require__(81)
+const path = __nccwpck_require__(17)
 
 try {
   const args = ['take-snapshot']
@@ -2843,10 +2844,9 @@ try {
       args.push(page)
     }
   }
-  console.log()
-  const command = './node_modules/.bin/perfsee'
-  core.debug(`RUN ${command} ${args.join(' ')}`)
-  childProcess.spawnSync('./node_modules/.bin/perfsee', args, {
+  const command = __nccwpck_require__.ab + "perfsee"
+  console.log(`RUN ${command} ${args.join(' ')}`)
+  childProcess.spawnSync(__nccwpck_require__.ab + "perfsee", args, {
     shell: false,
     stdio: ['inherit', 'inherit', 'inherit'],
     env: { ...process.env },

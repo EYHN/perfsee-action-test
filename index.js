@@ -1,5 +1,6 @@
 const core = require('@actions/core')
 const childProcess = require('child_process')
+const path = require('path')
 
 try {
   const args = ['take-snapshot']
@@ -31,10 +32,9 @@ try {
       args.push(page)
     }
   }
-  console.log()
-  const command = './node_modules/.bin/perfsee'
-  core.debug(`RUN ${command} ${args.join(' ')}`)
-  childProcess.spawnSync('./node_modules/.bin/perfsee', args, {
+  const command = path.join(__dirname, './node_modules/.bin/perfsee')
+  console.log(`RUN ${command} ${args.join(' ')}`)
+  childProcess.spawnSync(command, args, {
     shell: false,
     stdio: ['inherit', 'inherit', 'inherit'],
     env: { ...process.env },
