@@ -1,4 +1,5 @@
 const core = require('@actions/core')
+const github = require('@actions/github')
 const path = require('path')
 const sdk = require('@perfsee/sdk')
 
@@ -8,9 +9,6 @@ try {
   args.push('--project', core.getInput('project'))
   args.push('--token', core.getInput('token'))
 
-  if (core.getInput('hash')) {
-    args.push('--hash', core.getInput('hash'))
-  }
   if (core.getInput('hash')) {
     args.push('--hash', core.getInput('hash'))
   }

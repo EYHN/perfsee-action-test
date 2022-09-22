@@ -10,7 +10,10 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@actions/core": "^1.9.1",
-    "@perfsee/sdk": "^1.0.0-alpha.3",
+    "@actions/github": "^5.0.3",
+    "@perfsee/sdk": "^1.0.0-alpha.3"
+  },
+  "devDependencies": {
     "@vercel/ncc": "^0.34.0"
   },
   "resolutions": {
