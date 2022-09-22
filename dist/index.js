@@ -2398,7 +2398,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-function runCli() {
+function runCli(args) {
     const cli = new clipanion.Cli({
         binaryLabel: 'Perfsee sdk',
         binaryName: `perfsee`,
@@ -2409,7 +2409,7 @@ function runCli() {
     cli.register(clipanion.Builtins.DefinitionsCommand);
     cli.register(TakeSnapshotCommand);
     cli
-        .run(process.argv.slice(2), {
+        .run(args ?? process.argv.slice(2), {
         stdin: process.stdin,
         stdout: process.stdout,
         stderr: process.stderr,

@@ -67,7 +67,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@perfsee/sdk@npm:^1.0.0-alpha.3":
+"@perfsee/sdk@npm:1.0.0-alpha.3":
   version: 1.0.0-alpha.3
   resolution: "@perfsee/sdk@npm:1.0.0-alpha.3"
   dependencies:
@@ -80,6 +80,22 @@ __metadata:
   bin:
     perfsee: bin/cli.js
   checksum: 1cc471bf7b61542894651e554ddb8b8983d5d92072f26047e2161394e78b8e7d63c8ab2ac43bc016e5e325e266d41ad84ae61d5a3e79da2524d945e19cdeb155
+  languageName: node
+  linkType: hard
+
+"@perfsee/sdk@patch:@perfsee/sdk@npm%3A1.0.0-alpha.3#./.yarn/patches/@perfsee-sdk-npm-1.0.0-alpha.3-e98a64d8c6.patch::locator=perfsee-action%40workspace%3A.":
+  version: 1.0.0-alpha.3
+  resolution: "@perfsee/sdk@patch:@perfsee/sdk@npm%3A1.0.0-alpha.3#./.yarn/patches/@perfsee-sdk-npm-1.0.0-alpha.3-e98a64d8c6.patch::version=1.0.0-alpha.3&hash=310e39&locator=perfsee-action%40workspace%3A."
+  dependencies:
+    chalk: ^4.1.2
+    clipanion: ^3.1.0
+    graphql: ^16.0.0
+    lodash: ^4.17.21
+    node-fetch: ^2.6.2
+    simple-git: ^3.10.0
+  bin:
+    perfsee: bin/cli.js
+  checksum: 9f7d4753746c4b0f028c25fc7730ca01d962cabfb6ccfd0d324ab05a03efc90790071b67119af8601ec4f29d3e17846e83fadd2d922efa2fd76550c6e0318b49
   languageName: node
   linkType: hard
 
