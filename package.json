@@ -12,5 +12,8 @@
     "@actions/core": "^1.9.1",
     "@perfsee/sdk": "^1.0.0-alpha.3",
     "@vercel/ncc": "^0.34.0"
+  },
+  "resolutions": {
+    "@perfsee/sdk@^1.0.0-alpha.3": "patch:@perfsee/sdk@npm%3A1.0.0-alpha.3#./.yarn/patches/@perfsee-sdk-npm-1.0.0-alpha.3-e98a64d8c6.patch"
   }
 }

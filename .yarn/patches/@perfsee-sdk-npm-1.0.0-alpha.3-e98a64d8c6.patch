@@ -1,0 +1,44 @@
+diff --git a/dist/index.cjs.js b/dist/index.cjs.js
+index b2466e204936d3c4262c8e2ed635e004493209c1..6b2f5488f32a171c37ec2420c9694434a1c0e91d 100644
+--- a/dist/index.cjs.js
++++ b/dist/index.cjs.js
+@@ -503,7 +503,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+ */
+-function runCli() {
++function runCli(args) {
+     const cli = new clipanion.Cli({
+         binaryLabel: 'Perfsee sdk',
+         binaryName: `perfsee`,
+@@ -514,7 +514,7 @@ function runCli() {
+     cli.register(clipanion.Builtins.DefinitionsCommand);
+     cli.register(TakeSnapshotCommand);
+     cli
+-        .run(process.argv.slice(2), {
++        .run(args ?? process.argv.slice(2), {
+         stdin: process.stdin,
+         stdout: process.stdout,
+         stderr: process.stderr,
+diff --git a/dist/index.esm.js b/dist/index.esm.js
+index 961ff21a9d2401c0b91d3c7e5939b989cd68ccc4..2d0d73d22676c1c0b162573befb12982b2e96851 100644
+--- a/dist/index.esm.js
++++ b/dist/index.esm.js
+@@ -493,7 +493,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+ */
+-function runCli() {
++function runCli(args) {
+     const cli = new Cli({
+         binaryLabel: 'Perfsee sdk',
+         binaryName: `perfsee`,
+@@ -504,7 +504,7 @@ function runCli() {
+     cli.register(Builtins.DefinitionsCommand);
+     cli.register(TakeSnapshotCommand);
+     cli
+-        .run(process.argv.slice(2), {
++        .run(args ?? process.argv.slice(2), {
+         stdin: process.stdin,
+         stdout: process.stdout,
+         stderr: process.stderr,

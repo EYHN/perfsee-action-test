@@ -1,6 +1,6 @@
 const core = require('@actions/core')
-const childProcess = require('child_process')
 const path = require('path')
+const sdk = require('@perfsee/sdk')
 
 try {
   const args = ['take-snapshot']
@@ -32,13 +32,8 @@ try {
       args.push(page)
     }
   }
-  const command = path.join(__dirname, './node_modules/.bin/perfsee')
-  console.log(`RUN ${command} ${args.join(' ')}`)
-  childProcess.spawnSync(command, args, {
-    shell: false,
-    stdio: ['inherit', 'inherit', 'inherit'],
-    env: { ...process.env },
-  })
+  console.log(`RUN ${args.join(' ')}`)
+  sdk.runCli(args)
 } catch (error) {
   core.setFailed(error.message)
 }
