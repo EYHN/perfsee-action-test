@@ -11,11 +11,18 @@ try {
 
   if (core.getInput('hash')) {
     args.push('--hash', core.getInput('hash'))
+  } else if (github.context.sha) {
+    args.push('--hash', github.context.sha)
   }
   if (core.getInput('env')) {
     for (const env of parseArrayInput(core.getInput('env'))) {
       args.push('--env', env)
     }
+  } else if (
+    github.context.eventName === 'deployment_status' &&
+    github.context.payload.deployment_status.state == 'success'
+  ) {
+    args.push('--env', github.context.payload.deployment.environment)
   }
   if (core.getInput('profile')) {
     for (const profile of parseArrayInput(core.getInput('profile'))) {
